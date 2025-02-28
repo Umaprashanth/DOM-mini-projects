@@ -23,6 +23,8 @@ function addingToTodo(e){
     createUI();
 }
 
+
+
 function createUI(){
     unorderedList.innerHTML= ""
     allTodo.forEach((todo) => {
@@ -47,19 +49,21 @@ function createUI(){
 unorderedList.addEventListener("click", checkTodo)
 
 function checkTodo(e){
-    if (e.target.tagName == 'INPUT'){
-        AllChildren = Array.from(e.target.parentElement.parentElement.children)
-        // console.log(AllChildren);
-        let index = AllChildren.indexOf(e.target.parentElement)
 
-        // console.log(index);
+    AllChildren = Array.from(e.target.parentElement.parentElement.children)
+    let index = AllChildren.indexOf(e.target.parentElement)
+
+    if (e.target.tagName == 'INPUT'){
+
         allTodo[index].isDone = e.target.checked
 
         strikeThrough(e)
 
-    } else if(e.target.tagName == 'SPAN'){
+    } else if(e.target.tagName == 'SPAN'){ 
 
-        e.target.parentElement.remove()
+        allTodo.splice(index, 1)
+        
+        createUI()
     }
 }
 
