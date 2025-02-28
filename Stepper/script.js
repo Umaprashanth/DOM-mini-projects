@@ -5,7 +5,7 @@ const messageToDisplay = {
     2: "Add shipping address for successful delivery",
     3: "Complete payment to complete order",
     4: "Ready to get delivered",
-    5: "Happy happy, order got delivered"
+    5: "Order delivered successfully"
 }
 
 const previousButton = document.querySelector(".previous")
