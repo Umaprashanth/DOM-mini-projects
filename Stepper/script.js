@@ -30,10 +30,7 @@ function nextEvent() {
   const messageDiv = document.querySelector(".message")
   messageDiv.innerText = messageToDisplay[currentStep + 1]
 
-  const currStepNumberDiv = document.querySelectorAll('.content .count')[
-    currentStep - 1
-  ]
-  console.log(currStepNumberDiv);
+  const currStepNumberDiv = document.querySelectorAll('.count')[currentStep - 1]
   
   currStepNumberDiv.querySelector(".number").innerText = "✔"
   currStepNumberDiv.querySelector(".number").style.color= "white"
@@ -42,10 +39,7 @@ function nextEvent() {
 
   if (currentStep < 4) {
     currStepNumberDiv.nextElementSibling.style.borderColor = "green"
-
-    const nextStepNumberDiv = document.querySelectorAll(
-      `.content .count`
-    )[currentStep]
+    const nextStepNumberDiv = document.querySelectorAll(`.count`)[currentStep]
     nextStepNumberDiv.classList.add("blue")
   }
 
@@ -66,8 +60,7 @@ function prevEvent() {
   const messageDiv = document.querySelector(".message")
   messageDiv.innerText = messageToDisplay[currentStep - 1]
 
-  const prevStepDiv = document.querySelectorAll('.count')[
-    currentStep - 2]
+  const prevStepDiv = document.querySelectorAll('.count')[currentStep - 2]
 
   prevStepDiv.querySelector(".number").innerText = `${currentStep - 1}`
   prevStepDiv.querySelector(".number").style.color = "black"
